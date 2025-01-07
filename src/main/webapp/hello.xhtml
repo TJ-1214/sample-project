@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<title>PrimeFaces Input Example</title>
+</head>
+<body>
+	<h:form>
+		<h:outputLabel for="name" value="Name:" />
+		<p:inputText id="name" value="#{greet.name}" required="true" />
+
+		<p:commandButton value="Submit" update="helloMessage" />
+	</h:form>
+
+	<!-- Display Hello message after form submission -->
+
+		<h:outputText id="helloMessage" value="Hello, #{greet.name}"
+			rendered="#{not empty greet.name}" />
+
+</body>
+</html>
